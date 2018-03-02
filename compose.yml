@@ -1,0 +1,32 @@
+
+version: "3.2"
+services:
+
+  proxy:
+    image: milobahg/proxy:latest
+    ports:
+      - "8443:443"
+      - "8080:80"
+    environment:
+      - PROXY_PASS_SSL='https://httpSUrlHere.com/'
+      - PROXY_PASS_HTTP='http://httpUrlHere.com/'
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+
+  visualizer:
+    image: dockersamples/visualizer:stable
+    ports:
+      - "9000:8080"
+    stop_grace_period: 1m30s
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      placement:
+        constraints: [node.role == manager]
