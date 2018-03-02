@@ -22,7 +22,7 @@ docker service create --name proxy \
 -e PROXY_PASS_SSL='https://httpsUrlHere.com/' \
 milobahg/proxy:latest
 
-To run in a stack (with visualiser!)
+To run in a stack (with visualiser!), edit the variables inside of compose.yml for the PROXY_PASS* vars, then:
 
 docker stack deploy -c compose.yml proxy
 
