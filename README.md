@@ -1,6 +1,6 @@
 # milobahgProxy
 Apache reverse proxy for Docker, running both HTTP and HTTPS
-Replace 'key.key' and 'cert.crt' with your SSL cert and key, if you have a chain.crt then add as 'chain.crt' and uncomment in Dockerfile, and in proxy-ssl.conf
+Replace 'key.key' and 'cert.crt' with your SSL cert and key, if you have a chain.crt then add as 'chain.crt' and uncomment in Dockerfile, and in proxy-ssl.conf then rebuild for a new image.
 
 
 To run as a standalone container:
