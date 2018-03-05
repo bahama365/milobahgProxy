@@ -1,5 +1,5 @@
-# milobahgProxy
-Apache reverse proxy image, running both HTTP and HTTPS
+# Apache reverse proxy image, running both HTTP and HTTPS
+
 Replace 'key.key' and 'cert.crt' with your SSL cert and key, if you have a chain.crt then add as 'chain.crt' and uncomment in Dockerfile, and in proxy-ssl.conf then rebuild for a new image.
 
 
